@@ -1,2 +1,2 @@
-rootProject.name = "bsnl-excel-extractor"
+rootProject.name = "bsnl-list-generator"
 
