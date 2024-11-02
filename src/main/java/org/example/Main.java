@@ -26,15 +26,13 @@ public class Main {
         XSSFWorkbook writing=new XSSFWorkbook();
         XSSFSheet readSheet=reading.getSheetAt(0);
         XSSFSheet writesheet=writing.createSheet("generated list");
-        Iterator<Row> rowIterator=readSheet.iterator();
-       while (rowIterator.hasNext()){
-            Row row= rowIterator.next();
-            Cell serviceNumber=row.getCell(6);
-            Cell revenueShare=row.getCell(28);
-            String key=getCellValue(serviceNumber);
-            String value=getCellValue(revenueShare);
-            if (key!=null && value!=null){
-                data.put(key,value);
+        for (Row row : readSheet) {
+            Cell serviceNumber = row.getCell(6);
+            Cell revenueShare = row.getCell(28);
+            String key = getCellValue(serviceNumber);
+            String value = getCellValue(revenueShare);
+            if (key != null && value != null) {
+                data.put(key, value);
 
             }
         }
